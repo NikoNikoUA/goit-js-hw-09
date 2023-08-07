@@ -1,7 +1,6 @@
 const btnStart = document.querySelector('[data-start]');
 const btnStop = document.querySelector('[data-stop]');
 const body = document.querySelector('body');
-console.log(body);
 
 btnStart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
