@@ -6,6 +6,7 @@ btnStart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
 
 let disablesBtnStop = (btnStop.disabled = true);
+console.log(disablesBtnStop);
 
 function onBtnStartClick() {
   body.style.backgroundColor = getRandomHexColor();
@@ -14,11 +15,11 @@ function onBtnStartClick() {
   }, 1000);
 
   btnStart.disabled = true;
-  btnStop.disabled = false;
+  disablesBtnStop = false;
 }
 
 function onBtnStopClick() {
-  btnStop.disabled = true;
+  disablesBtnStop = true;
   btnStart.disabled = false;
   clearInterval(timerId);
 }
