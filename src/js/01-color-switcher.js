@@ -5,21 +5,20 @@ const body = document.querySelector('body');
 btnStart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
 
-const disabledStopBtn = (btnStop.disabled = true);
+let disabledStopBtn = (btnStop.disabled = true);
 
 function onBtnStartClick() {
   body.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-
   btnStart.disabled = true;
   btnStop.disabled = false;
 }
 
 function onBtnStopClick() {
+  disabledStartBtn = btnStart.disabled = false;
   btnStop.disabled = true;
-  btnStart.disabled = false;
   clearInterval(timerId);
 }
 
