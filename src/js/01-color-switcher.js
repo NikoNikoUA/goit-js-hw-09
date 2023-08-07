@@ -6,19 +6,20 @@ btnStart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
 
 let disabledStopBtn = (btnStop.disabled = true);
+let disabledStartBtn = (btnStart.disabled = false);
 
 function onBtnStartClick() {
   body.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  btnStart.disabled = true;
-  btnStop.disabled = false;
+  disabledStartBtn = btnStart.disabled = true;
+  disabledStopBtn = btnStop.disabled = false;
 }
 
 function onBtnStopClick() {
   disabledStartBtn = btnStart.disabled = false;
-  btnStop.disabled = true;
+  disabledStopBtn = btnStop.disabled = true;
   clearInterval(timerId);
 }
 
