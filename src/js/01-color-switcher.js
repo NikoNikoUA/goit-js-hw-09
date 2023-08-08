@@ -13,11 +13,11 @@ function onPageStart() {
 
 function onBtnStartClick() {
   body.style.backgroundColor = getRandomHexColor();
+  btnStart.disabled = true;
+  btnStop.disabled = false;
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  btnStart.disabled = true;
-  btnStop.disabled = false;
 }
 
 function onBtnStopClick() {
