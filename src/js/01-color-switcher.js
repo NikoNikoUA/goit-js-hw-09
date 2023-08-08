@@ -5,6 +5,8 @@ const body = document.querySelector('body');
 btnStart.addEventListener('click', onBtnStartClick);
 btnStop.addEventListener('click', onBtnStopClick);
 
+let timerId = null;
+
 onPageStart();
 
 function onPageStart() {
@@ -15,6 +17,7 @@ function onBtnStartClick() {
   body.style.backgroundColor = getRandomHexColor();
   btnStart.disabled = true;
   btnStop.disabled = false;
+
   timerId = setInterval(() => {
     body.style.backgroundColor = getRandomHexColor();
   }, 1000);
