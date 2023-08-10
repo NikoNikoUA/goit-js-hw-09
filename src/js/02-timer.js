@@ -19,9 +19,19 @@ btnStart.disabled = true;
 function onBtnStartClick() {
   timerId = setInterval(() => {
     const currentTime = Date.now();
-    let timeDifference = fp.selectedDates[0] - currentTime;
-    const { days, hours, minutes, seconds } = convertMs(timeDifference);
-    spanActualization({ days, hours, minutes, seconds });
+    const timeDifference = fp.selectedDates[0] - currentTime;
+    if (timeDifference <= 0) {
+      clearInterval(timerId);
+      spanActualization({
+        days: '00',
+        hours: '00',
+        minutes: '00',
+        seconds: '00',
+      });
+    } else {
+      const { days, hours, minutes, seconds } = convertMs(timeDifference);
+      spanActualization({ days, hours, minutes, seconds });
+    }
   }, 1000);
 }
 
