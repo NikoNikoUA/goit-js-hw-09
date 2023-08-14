@@ -8,7 +8,6 @@ const spanDays = document.querySelector('span[data-days]');
 const spanHours = document.querySelector('span[data-hours]');
 const spanMinutes = document.querySelector('span[data-minutes]');
 const spanSeconds = document.querySelector('span[data-seconds]');
-console.log(spanDays);
 
 let timerId = null;
 
